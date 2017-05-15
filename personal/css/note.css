@@ -1,0 +1,78 @@
+div#account {
+	float: right;
+}
+
+div#all-note {
+	/*-webkit-column-count: 4;
+	-webkit-column-rule: 2px solid #000;*/
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+div#head-section {
+	margin: auto;
+	margin-top: 30px;
+	
+	width: 30%;	
+}
+
+div#layout {
+	margin: auto;
+	width: 90%;
+}
+
+div#login {
+	margin: auto;
+	padding: 20px;
+	background-color: #FFBB00;
+	border-bottom: 5px dashed black;
+	border-top: 5px dashed black;
+}
+
+div.modal-content {
+	padding: 10px;
+}
+
+div.notepad {
+	background: #98FB98;
+	border-radius: 10px;
+	padding: 10px;
+	word-wrap: break-word;
+}
+
+div.single-note {
+	background-color: white;
+	flex: 1 1 calc(33.33% - 20px);
+	margin-top: 5px;
+	padding: 5px;
+}
+
+h1#site-title {
+	margin: 0;
+}
+
+input[name='search'] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    /*padding: 12px 20px 12px 40px;*/
+    /*float: right;*/
+    font-size: 16px;
+    margin: auto;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    width: 40%;
+}
+
+input[name='search']:focus {
+	width: 100%;
+}
+
+textarea[name='description'] {
+	height: 200px;
+}
