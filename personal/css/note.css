@@ -13,7 +13,6 @@ div#all-note {
 div#head-section {
 	margin: auto;
 	margin-top: 30px;
-	
 	width: 30%;	
 }
 
@@ -43,7 +42,6 @@ div.notepad {
 
 div.single-note {
 	background-color: white;
-	flex: 1 1 calc(33.33% - 20px);
 	margin-top: 5px;
 	padding: 5px;
 }
@@ -60,8 +58,6 @@ input[name='search'] {
     background-image: url('searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    /*padding: 12px 20px 12px 40px;*/
-    /*float: right;*/
     font-size: 16px;
     margin: auto;
     -webkit-transition: width 0.4s ease-in-out;
@@ -73,6 +69,6 @@ input[name='search']:focus {
 	width: 100%;
 }
 
-textarea[name='description'] {
+/*textarea[name='description'] {
 	height: 200px;
-}
+}*/

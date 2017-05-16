@@ -34,10 +34,12 @@
                         <div class="form-group">
                             <input class="form-control" type="Text" name="title" placeholder="Input Title...">
                             <br>
-                            <textarea class="form-control" name="description" placeholder="Input Content..."></textarea>
+                            <textarea class="form-control" rows='10' name="description" placeholder="Input Content..."></textarea>
                             <br>
-                            <button class="btn btn-primary" type="submit">Save</button>
-                            <button class="btn btn-danger" type="button" data-dismiss='modal' aria-hidden='true'>Cancel</button>
+                            <div class='col-xs-offset-8 col-md-offset-9'>
+                                <button class="btn btn-primary" type="submit">Save</button>
+                                <button class="btn btn-danger" type="button" data-dismiss='modal' aria-hidden='true'>Cancel</button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -55,14 +57,20 @@
         while ($row = $result->fetch_object()) {
             $id = $row->id;
 
-            $displayUpdate =    "<div class='single-note'>
+            $displayUpdate =    "<div class='col-xs-12 col-md-4 single-note'>
                                     <div class='notepad' id='$row->title'>
                                         <h4 class='titleNote'><strong> $row->title </strong></h4>
                                         <p> $row->description </p>
 
-                                        <button type='button' class='btn btn-warning' id='btn-update' data-toggle='modal' data-target='#update-$id'>
-                                            <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
-                                        </button>
+                                        <div class='col-xs-offset-10 col-md-offset-8'>
+                                            <button type='button' class='btn btn-warning' id='btn-update' data-toggle='modal' data-target='#update-$id'>
+                                                <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
+                                            </button>
+
+                                            <button type='button' class='btn btn-danger' id='btn-delete' data-toggle='modal' data-target='#delete-$id'>
+                                                <i class='fa fa-trash' aria-hidden='true'></i>
+                                            </button>
+                                        </div> 
 
                                         <div class='modal fade' id='update-$id' tabindex='-1' role='dialog' aria-labelledby='update-note'>
                                             <div class='modal-dialog modal-lg' role='document'>
@@ -72,21 +80,22 @@
                                                         <div class='form-group'>
                                                             <input class='form-control' type='hidden' value=$row->id name='id'>
                                                             <input class='form-control' type='text' value='$row->title' name='title'>
-                                                            <textarea class='form-control' name='description'>$row->description</textarea>
                                                             <br>
-                                                            <button class='btn btn-success' type='submit' name='updateNote'>Confirm</button>
-                                                            <button class='btn btn-danger' type='button' data-dismiss='modal' aria-hidden='true'>
-                                                                Cancel
-                                                            </button>
+                                                            <textarea class='form-control' rows='10'  name='description'>$row->description</textarea>
+                                                            <br>
+                                                            <div class='col-xs-offset-8 col-md-offset-9'> 
+                                                                <button class='btn btn-success' type='submit' name='updateNote'>Confirm</button>
+                                                                <button class='btn btn-danger' type='button' data-dismiss='modal' aria-hidden='true'>
+                                                                    Cancel
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </form> 
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <button type='button' class='btn btn-danger' id='btn-delete' data-toggle='modal' data-target='#delete-$id'>
-                                            <i class='fa fa-trash' aria-hidden='true'></i>
-                                        </button> 
+                                        
 
                                         <div class='modal fade' id='delete-$id' tabindex='-1' role='dialog' aria-labelledby='update-note'>
                                             <div class='modal-dialog modal-lg' role='document'>
