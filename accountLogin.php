@@ -22,12 +22,10 @@
 			if ($_POST['r'] == 'remember') {
 				setcookie('username', $username, time()+60*60*24);
 			}
-			// echo "good";
 			header('Location: index.php');
 		}
 		else {
-			echo 'error';
-			// header('Location: login.php');
+			header('Location: login.php');
 		}
 	}
 	else {
