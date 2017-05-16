@@ -46,6 +46,15 @@ div.single-note {
 	padding: 5px;
 }
 
+div.update-delete-btn {
+	opacity: 0;
+	text-align: right;
+}
+
+div.update-delete-btn:hover {
+	opacity: 1;
+}
+
 h1#site-title {
 	margin: 0;
 }
