@@ -1,7 +1,5 @@
 <?php  
 	require_once('db/dbconf.php');
-	require_once('header.php');
-	require_once('footer.php');
 
 	$search = $_POST['search'];
 	
@@ -15,7 +13,7 @@
 		while ($row = $result->fetch_object()) {
         $id = $row->id;
 
-        $updateAndDeleteButton =    "   <div class='col-xs-offset-10 col-md-offset-8'>
+        $updateAndDeleteButton =    "   <div class='update-delete-btn'>
                                             <button type='button' class='btn btn-warning' id='btn-update' data-toggle='modal' data-target='#update-$id'>
                                                 <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
                                             </button>
