@@ -17,7 +17,7 @@
 
     <h1>My Note</h1>
     <br>
-    <form class="form-group" method="POST" action="search.php">
+    <form class="form-group" method="POST" action="index.php">
         <input class="form-control" id='search-box' type="text" name="search" placeholder='Search Note...'>
     </form>
 
@@ -28,21 +28,24 @@
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <h2>New Note</h2>
-                <div class="addNote">
-                    <form method="POST" action="create.php">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2>Add New Note</h2>
+                </div>
+
+                <form method="POST" action="create.php">
+                    <div class="modal-body">
                         <div class="form-group">
                             <input class="form-control" type="Text" name="title" placeholder="Input Title...">
                             <br>
                             <textarea class="form-control" rows='10' name="description" placeholder="Input Content..."></textarea>
-                            <br>
-                            <div class='col-xs-offset-8 col-md-offset-9'>
-                                <button class="btn btn-primary" type="submit">Save</button>
-                                <button class="btn btn-danger" type="button" data-dismiss='modal' aria-hidden='true'>Cancel</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                        </div> 
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit">Save</button>
+                        <button class="btn btn-danger" type="button" data-dismiss='modal' aria-hidden='true'>Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -50,76 +53,16 @@
 
     <!-- BEGIN: ListNote -->
     <div id="all-note">
-        <?php 
-        $sql = "SELECT * FROM note";
-        $result = $db->query($sql);
-
-        while ($row = $result->fetch_object()) {
-            $id = $row->id;
-
-            $displayUpdate =    "<div class='col-xs-12 col-md-4 single-note'>
-                                    <div class='notepad' id='$row->title'>
-                                        <h4 class='titleNote'><strong> $row->title </strong></h4>
-                                        <p> $row->description </p>
-
-                                        <div class='col-xs-offset-10 col-md-offset-8'>
-                                            <button type='button' class='btn btn-warning' id='btn-update' data-toggle='modal' data-target='#update-$id'>
-                                                <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
-                                            </button>
-
-                                            <button type='button' class='btn btn-danger' id='btn-delete' data-toggle='modal' data-target='#delete-$id'>
-                                                <i class='fa fa-trash' aria-hidden='true'></i>
-                                            </button>
-                                        </div> 
-
-                                        <div class='modal fade' id='update-$id' tabindex='-1' role='dialog' aria-labelledby='update-note'>
-                                            <div class='modal-dialog modal-lg' role='document'>
-                                                <div class='modal-content'>
-                                                    <h2>Editing Note</h2>
-                                                    <form method='POST' action='update.php'>
-                                                        <div class='form-group'>
-                                                            <input class='form-control' type='hidden' value=$row->id name='id'>
-                                                            <input class='form-control' type='text' value='$row->title' name='title'>
-                                                            <br>
-                                                            <textarea class='form-control' rows='10'  name='description'>$row->description</textarea>
-                                                            <br>
-                                                            <div class='col-xs-offset-8 col-md-offset-9'> 
-                                                                <button class='btn btn-success' type='submit' name='updateNote'>Confirm</button>
-                                                                <button class='btn btn-danger' type='button' data-dismiss='modal' aria-hidden='true'>
-                                                                    Cancel
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </form> 
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        
-
-                                        <div class='modal fade' id='delete-$id' tabindex='-1' role='dialog' aria-labelledby='update-note'>
-                                            <div class='modal-dialog modal-lg' role='document'>
-                                                <div class='modal-content'>
-                                                    <h2>Deleting Note</h2>
-                                                    <form method='POST' action='delete.php'>
-                                                        <div class='form-group'>
-                                                            <input class='form-control' type='hidden' value=$row->id name='id'>
-                                                            <button class='btn btn-success' type='submit' name='deleteNote'>Confirm</button>
-                                                            <button class='btn btn-danger' type='button' data-dismiss='modal' aria-hidden='true'>
-                                                                Cancel
-                                                            </button>
-                                                        </div>
-                                                    </form> 
-                                                </div>
-                                            </div>
-                                        </div>
- 
-                                    </div>
-                                </div> ";   
-            echo $displayUpdate;
+    <?php 
+        if (!isset($_POST['search'])) {
+            require_once('listNote.php');
         }
-        ?>
+        else {
+            require_once('search.php');
+        }
+    ?>
     </div>
+        
     <!-- END: ListNote -->
 
 </div>

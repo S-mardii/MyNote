@@ -1,18 +1,10 @@
-<?php  
-	require_once('db/dbconf.php');
-	require_once('header.php');
-	require_once('footer.php');
+<?php
+    require_once('db/dbconf.php');
 
-	$search = $_POST['search'];
-	
-	if (isset($search)) {
-		$sql = "SELECT * 
-				FROM note 
-				WHERE title LIKE '%$search%'";
+    $sql = "SELECT * FROM note";
+    $result = $db->query($sql);
 
-		$result = $db->query($sql);
-		
-		while ($row = $result->fetch_object()) {
+    while ($row = $result->fetch_object()) {
         $id = $row->id;
 
         $updateAndDeleteButton =    "   <div class='col-xs-offset-10 col-md-offset-8'>
@@ -94,4 +86,4 @@
                             </div> ";   
         echo $indexDisplay;
     }
-	}
+?>
