@@ -51,8 +51,13 @@
     </div>
     <!-- END AddNote Form -->
 
+    <!-- Live Search -->
+    <div id="result">
+    </div>
+    <!-- END Live Search -->
+
     <!-- BEGIN: ListNote -->
-    <div id="all-note">
+  <!--   <div id="all-note">
     <?php 
         if (!isset($_POST['search'])) {
             require_once('listNote.php');
@@ -61,7 +66,7 @@
             require_once('search.php');
         }
     ?>
-    </div>
+    </div> -->
         
     <!-- END: ListNote -->
 
