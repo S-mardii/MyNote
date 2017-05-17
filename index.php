@@ -52,7 +52,7 @@
     <!-- END AddNote Form -->
 
     <!-- Live Search -->
-    <div id="result">
+    <div class="grid" id="result" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
     </div>
     <!-- END Live Search -->
 

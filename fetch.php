@@ -83,7 +83,7 @@ $result = $db->query($query);
                                 </div>
                             ";
 
-        $indexDisplay =    "<div class='col-xs-12 col-md-4 single-note'>
+        $indexDisplay =    "<div class='col-xs-12 col-md-4 single-note grid-item'>
                                 <div class='notepad' id='$row->title'>
                                     <h4 class='titleNote'><strong> $row->title </strong></h4>
                                     <p> $row->description </p>

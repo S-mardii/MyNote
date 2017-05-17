@@ -3,7 +3,7 @@ div#account {
 }
 
 div#all-note {
-	/*-webkit-column-count: 4;
+	/*-webkit-column-count: 3;
 	-webkit-column-rule: 2px solid #000;*/
 
 	display: flex;
