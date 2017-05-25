@@ -1,3 +1,7 @@
+button.btn-retry {
+	text-align: right;
+}
+
 div#account {
 	float: right;
 }
