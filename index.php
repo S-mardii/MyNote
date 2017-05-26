@@ -12,6 +12,7 @@
 
 <div id="layout">
     <div id="account">
+        <img class="profile" src="<?php echo $profilePic ?>" alt="profile">
         <h4><?php echo $fullName?></h4>
         <a href="logout.php">Logout</a><br>
     </div>

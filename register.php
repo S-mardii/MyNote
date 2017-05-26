@@ -11,11 +11,11 @@
 		$password = crypt($_POST['password'], KEY_SALT);
 		$profilePic = '';
 
-		$sql = "INSERT INTO account (fullName, gender, username, password) VALUES ('$fullName', '$gender', '$username', '$password')";
+		$sql = "INSERT INTO account (fullName, username, password, gender) VALUES ('$fullName', '$username', '$password', '$gender')";
 		$result = $db->query($sql);
+		print_r($result);
 
 		if ($result) {
-
 			if (isset($_FILES['profilePic'])) {
 				$uploadDir = 'db/profilePic/';
 				$fileTmpName = $_FILES['profilePic']['tmp_name'];
@@ -52,7 +52,12 @@
 			}
 
 			$sql = "UPDATE account SET profilePic = '$profilePic' WHERE username = '$username'";
-			header('Location: login.php');
+			echo $picProfile;
+			$addImage = $db->query($sql);
+
+			if ($addImage) {
+				header('Location: login.php');
+			}
 		}
 		else {
 			?>
