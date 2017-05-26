@@ -7,11 +7,12 @@
     require_once('header.php'); 
 	require_once('footer.php'); 
 	require_once('db/dbconf.php');
+    require_once('showProfilePic.php');
 ?>
 
 <div id="layout">
     <div id="account">
-        <h4><?php echo $_SESSION['username'];?></h4>
+        <h4><?php echo $fullName?></h4>
         <a href="logout.php">Logout</a><br>
     </div>
 

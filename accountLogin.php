@@ -4,7 +4,6 @@
 
 	if (isset($_POST['sign-in']) && $_POST['username']!='') {
 		$username = $_POST['username'];
-		$password = $_POST['password'];
 		$password = crypt($_POST['password'], KEY_SALT);
 
 		$sql = "SELECT *
