@@ -17,7 +17,7 @@
 
 		<form class="form-group" role='form' method="POST" name="loginForm" action="accountLogin.php">
 			<label>Username</label>
-			<input class="form-control" type="text" name="username" placeholder="username" required>
+			<input class="form-control" type="text" name="username" autofocus='autofocus' placeholder="username" required>
 			<br>
 			<label>Password</label>
 			<input class="form-control" type="password" name="password" placeholder="password" required>

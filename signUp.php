@@ -15,7 +15,7 @@
 
 		<form enctype="multipart/form-data" class="form-group" role='form' method="POST" name="loginForm" action="register.php">
 			<label>Full Name</label>
-			<input class="form-control" type="text" name="fullName" placeholder="Full Name" required>
+			<input class="form-control" type="text" name="fullName" autofocus='autofocus' placeholder="Full Name" required>
 			<br>
 
 			<label>Gender</label>

@@ -40,7 +40,7 @@ $result = $db->query($query);
                                             <form method='POST' action='update.php'>
                                                 <div class='modal-body'>
                                                     <div class='form-group'>
-                                                        <input class='form-control' type='hidden' value=$row->id name='id'>
+                                                        <input class='form-control' type='hidden' autofocus='autofocus' value=$row->id name='id'>
                                                         <input class='form-control' type='text' value='$row->title' name='title'>
                                                         <br>
                                                         <textarea class='form-control' rows='10'  name='description'>$row->description</textarea>

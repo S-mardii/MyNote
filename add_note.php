@@ -6,7 +6,7 @@
 
 <form method='POST' action='create.php'>
 	<label>Title</label>
-	<input type='text' name='title'>
+	<input type='text' name='title' autofocus="autofocus">
 	
 	<br>
 

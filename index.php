@@ -91,7 +91,7 @@
                 <form method="POST" action="create.php">
                     <div class="modal-body">
                         <div class="form-group">
-                            <input class="form-control" type="Text" name="title" placeholder="Input Title...">
+                            <input class="form-control" type="Text" name="title" autofocus='autofocus' placeholder="Input Title...">
                             <br>
                             <textarea class="form-control" rows='10' name="description" placeholder="Input Content..."></textarea>
                         </div> 
@@ -100,7 +100,7 @@
                         <button class="btn btn-primary" type="submit">Save</button>
                         <button class="btn btn-danger" type="button" data-dismiss='modal' aria-hidden='true'>Cancel</button>
                     </div>
-                </form>
+                </form> 
             </div>
         </div>
     </div>
