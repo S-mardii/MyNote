@@ -1,7 +1,7 @@
 <?php
     require_once('db/dbconf.php');
 
-    $sql = "SELECT * FROM note";
+    $sql = "SELECT * FROM `note` ORDER BY created DESC";
     $result = $db->query($sql);
 
     while ($row = $result->fetch_object()) {

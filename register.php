@@ -11,8 +11,9 @@
 		$password = crypt($_POST['password'], KEY_SALT);
 		$profilePic = '';
 
-		$sql = "INSERT INTO account (fullName, gender, username, password) VALUES ('$fullName', '$gender', '$username', '$password')";
+		$sql = "INSERT INTO account (fullName, username, password, gender, profilePic) VALUES ('$fullName', '$username', '$password', '$gender', '$profilePic')";
 		$result = $db->query($sql);
+
 
 		if ($result) {
 
@@ -52,7 +53,12 @@
 			}
 
 			$sql = "UPDATE account SET profilePic = '$profilePic' WHERE username = '$username'";
-			header('Location: login.php');
+			echo $picProfile;
+			$addImage = $db->query($sql);
+
+			if ($addImage) {
+				header('Location: login.php');
+			}
 		}
 		else {
 			?>

@@ -6,7 +6,7 @@
 		$title = $_POST['title'];
 		$description = $_POST['description'];
 
-		$sql = "UPDATE note SET title = '$title', description = '$description' WHERE id = $id";
+		$sql = "UPDATE note SET title = '$title', description = '$description', created = NOW() WHERE id = $id";
 		$result = $db->query($sql);
 
 		if ($result) {
